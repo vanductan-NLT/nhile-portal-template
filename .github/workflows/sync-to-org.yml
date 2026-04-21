@@ -14,5 +14,5 @@ jobs:
 
       - name: Push to org fork
         run: |
-          git remote add org https://x-access-token:${{ secrets.ORG_SYNC_TOKEN }}@github.com/${{ vars.ORG_NAME }}/${{ github.event.repository.name }}.git
+          git remote add org https://x-access-token:${{ secrets.ORG_SYNC_TOKEN }}@github.com/${{ secrets.ORG_NAME }}/${{ github.event.repository.name }}.git
           git push org main
