@@ -26,3 +26,11 @@ npx @nhile/cli doctor
 - dev: integration
 - incoming: Claude Code làm việc tại đây
 - Flow: incoming → PR → dev → PR → main
+
+### 5. Push to org
+Sau khi clone repo về máy, chạy một lần:
+  git remote add org <orgRemoteUrl từ nhile.config.json>
+
+Flow sync:
+  git push origin main              # push lên repo cá nhân
+  git push org main:incoming        # sync lên org/incoming để IT review
