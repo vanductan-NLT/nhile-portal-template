@@ -3,9 +3,11 @@ name: Sync to Org
 on:
   push:
     branches: [main]
+  workflow_dispatch:
 
 jobs:
   sync:
+    if: ${{ vars.ORG_NAME != '' }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repo (full history)
