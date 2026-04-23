@@ -28,9 +28,13 @@ npx @nhile/cli doctor
 - Flow: incoming → PR → dev → PR → main
 
 ### 5. Push to org
-Sau khi clone repo về máy, chạy một lần:
-  git remote add org <orgRemoteUrl từ nhile.config.json>
+CLI tự `git remote add org` khi scaffold. Remote URL sạch (không chứa PAT).
+Bạn được add làm collaborator trên org fork với quyền `push`.
 
 Flow sync:
   git push origin main              # push lên repo cá nhân
   git push org main:incoming        # sync lên org/incoming để IT review
+
+Lần push `org` đầu tiên git sẽ hỏi credentials — nhập GitHub username + PAT
+(hoặc dùng Git Credential Manager / `gh auth login`). Sau đó credentials được
+cache, không hỏi lại.
